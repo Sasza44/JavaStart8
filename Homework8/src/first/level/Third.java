@@ -15,8 +15,9 @@ public class Third {
 	static void showAllFolders(String ad) {
 		File folder = new File(ad);
 		if(folder.exists()) {
-			for(File item: folder.listFiles())
-			System.out.println(item + (item.isFile()?" - File": " - Folder"));
+			for(File item: folder.listFiles()) {
+				if(item.isDirectory()) {System.out.println(item);}
+			}
 		}
 	}
 }
